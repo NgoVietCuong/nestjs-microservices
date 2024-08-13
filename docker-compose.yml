@@ -11,5 +11,17 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
+  auth:
+    build: 
+      context: .
+      dockerfile: ./apps/auth/Dockerfile
+      target: development
+    # command: pnpm run start:dev resevations
+    tty: true
+    ports:
+      - 46522:3000
+    volumes:
+      - ./:/app
+      - /app/node_modules
   mongo:
     image: mongo
