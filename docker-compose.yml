@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: ./apps/reservations/Dockerfile
       target: development
-    # command: pnpm run start:dev resevations
+    command: pnpm run start:dev resevations
     tty: true
     ports:
       - 46521:3000
@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: ./apps/auth/Dockerfile
       target: development
-    # command: pnpm run start:dev resevations
+    command: pnpm run start:dev auth
     tty: true
     ports:
       - 46522:3000
@@ -25,3 +25,5 @@ services:
       - /app/node_modules
   mongo:
     image: mongo
+    ports:
+      - 46520:27017
