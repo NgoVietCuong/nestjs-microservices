@@ -6,6 +6,8 @@ services:
       target: development
     command: pnpm run start:dev resevations
     tty: true
+    env_file:
+      - ./apps/reservations/.env
     ports:
       - 46521:3000
     volumes:
@@ -18,6 +20,8 @@ services:
       target: development
     command: pnpm run start:dev auth
     tty: true
+    env_file:
+      - ./apps/auth/.env
     ports:
       - 46522:3000
     volumes:
