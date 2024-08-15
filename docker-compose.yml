@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: ./apps/reservations/Dockerfile
       target: development
-    command: pnpm run start:dev resevations
+    # command: pnpm run start:dev resevations
     tty: true
     env_file:
       - ./apps/reservations/.env
@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: ./apps/auth/Dockerfile
       target: development
-    command: pnpm run start:dev auth
+    # command: pnpm run start:dev auth
     tty: true
     env_file:
       - ./apps/auth/.env
