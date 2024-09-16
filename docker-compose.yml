@@ -27,6 +27,20 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
+  payments:
+    build: 
+      context: .
+      dockerfile: ./apps/payments/Dockerfile
+      target: development
+    # command: pnpm run start:dev auth
+    tty: true
+    env_file:
+      - ./apps/payments/.env
+    ports:
+      - 46523:3002
+    volumes:
+      - ./:/app
+      - /app/node_modules
   mongo:
     image: mongo
     ports:
