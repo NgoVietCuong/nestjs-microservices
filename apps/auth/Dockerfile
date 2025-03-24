@@ -5,13 +5,12 @@ WORKDIR /app
 RUN apk update && apk add --no-cache wget
 
 COPY package.json .
+COPY tsconfig.json .
+COPY nest-cli.json .
 
-COPY pnpm-lock.yaml .
+RUN yarn install
 
-RUN npm install -g pnpm
+COPY apps/auth apps/auth
+COPY libs libs
 
-RUN pnpm install
-
-COPY . .
-
-RUN pnpm run build
+RUN yarn run build auth

@@ -4,12 +4,12 @@ services:
       context: .
       dockerfile: ./apps/reservations/Dockerfile
       target: development
-    # command: pnpm run start:dev resevations
+    command: yarn run start:dev resevations
     tty: true
     env_file:
       - ./apps/reservations/.env
     ports:
-      - 46521:3000
+      - "46521:3000"
     volumes:
       - ./:/app
       - /app/node_modules
@@ -18,12 +18,12 @@ services:
       context: .
       dockerfile: ./apps/auth/Dockerfile
       target: development
-    # command: pnpm run start:dev auth
+    command: yarn run start:dev auth
     tty: true
     env_file:
       - ./apps/auth/.env
     ports:
-      - 46522:3000
+      - "46522:3000"
     volumes:
       - ./:/app
       - /app/node_modules
@@ -32,16 +32,16 @@ services:
       context: .
       dockerfile: ./apps/payments/Dockerfile
       target: development
-    # command: pnpm run start:dev auth
+    # command: yarn run start:dev payments
     tty: true
     env_file:
       - ./apps/payments/.env
     ports:
-      - 46523:3002
+      - "46523:3002"
     volumes:
       - ./:/app
       - /app/node_modules
   mongo:
     image: mongo
     ports:
-      - 46520:27017
+      - "46520:27017"

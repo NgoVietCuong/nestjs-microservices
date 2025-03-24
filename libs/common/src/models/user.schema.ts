@@ -3,10 +3,10 @@ import { AbstractDocument } from '@app/common';
 
 @Schema({ versionKey: false })
 export class UserDocument extends AbstractDocument {
-  @Prop()
+  @Prop({ type: String })
   email: string;
 
-  @Prop()
+  @Prop({ type: String })
   password: string;
 }
 
