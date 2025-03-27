@@ -5,7 +5,6 @@ import { PaymentsController } from './payments.controller';
 import { PaymentsService } from './payments.service';
 import { LoggerModule } from '@app/common';
 
-
 @Module({
   imports: [
     LoggerModule,
@@ -13,7 +12,7 @@ import { LoggerModule } from '@app/common';
       isGlobal: true,
       validationSchema: Joi.object({
         PORT: Joi.number().required(),
-        STRIPE_SECRET_KET: Joi.string().required()
+        STRIPE_SECRET_KEY: Joi.string().required(),
       }),
     }),
   ],
