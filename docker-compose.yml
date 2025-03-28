@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: ./apps/reservations/Dockerfile
       target: development
-    command: yarn run start:dev resevations
+    command: yarn run start:dev reservations
     tty: true
     env_file:
       - ./apps/reservations/.env
@@ -32,12 +32,12 @@ services:
       context: .
       dockerfile: ./apps/payments/Dockerfile
       target: development
-    # command: yarn run start:dev payments
+    command: yarn run start:dev payments
     tty: true
     env_file:
       - ./apps/payments/.env
     ports:
-      - "46523:3002"
+      - "46523:3000"
     volumes:
       - ./:/app
       - /app/node_modules

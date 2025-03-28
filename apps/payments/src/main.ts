@@ -15,6 +15,6 @@ async function bootstrap() {
     },
   });
   app.useLogger(app.get(Logger));
-  await app.listen(configService.get('PORT'));
+  await app.startAllMicroservices();
 }
 bootstrap();

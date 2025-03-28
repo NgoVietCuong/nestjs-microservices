@@ -1,12 +1,9 @@
-import Stripe from 'stripe';
-import { IsDefined, IsNotEmptyObject, IsNumber, ValidateNested } from 'class-validator';
-import { CardDto } from './card.dto';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateChargeDto {
-  @IsDefined()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  card: CardDto;
+  @IsString()
+  @IsNotEmpty()
+  paymentMethod?: string = 'pm_card_visa';
 
   @IsNumber()
   amount: number;
