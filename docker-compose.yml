@@ -36,8 +36,18 @@ services:
     tty: true
     env_file:
       - ./apps/payments/.env
-    ports:
-      - "46523:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+  notifications:
+    build:
+      context: .
+      dockerfile: ./apps/notifications/Dockerfile
+      target: development
+    command: yarn run start:dev notifications
+    tty: true
+    env_file:
+      - ./apps/notifications/.env
     volumes:
       - ./:/app
       - /app/node_modules
