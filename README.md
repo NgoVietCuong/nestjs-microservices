@@ -23,21 +23,14 @@ cd nestjs-microservices
 $ yarn install
 ```
 
+### **3. Config .env for each service
+- Create a .env file for each service by copying the content from the .env.example file and modifying the values of environment variables as needed.
 
-
-
-
-## Running the app
-
+### **4. Start applications
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+# Start all services
+yarn run start:dev reservations
+yarn run start:dev auth
+yarn run start:dev payments
+yarn run start:dev notifications
 ```
-
-## Deploy the application
