@@ -28,4 +28,4 @@ RUN yarn install --production
 
 COPY --from=development /app/dist ./dist
 
-CMD ["node", "dist/apps/reservations/main"]
+CMD ["node", "dist/apps/reservations/apps/reservations/src/main"]

@@ -28,4 +28,4 @@ RUN yarn install --production
 
 COPY --from=development /app/dist ./dist
 
-CMD ["node", "dist/apps/auth/main"]
+CMD ["node", "dist/apps/auth/apps/auth/src/main"]

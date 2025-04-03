@@ -28,4 +28,4 @@ RUN yarn install --production
 
 COPY --from=development /app/dist ./dist
 
-CMD ["node", "dist/apps/payments/main"]
+CMD ["node", "dist/apps/payments/apps/payments/src/main"]
