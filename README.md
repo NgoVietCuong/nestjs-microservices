@@ -18,15 +18,15 @@
 git clone https://github.com/NgoVietCuong/nestjs-microservices.git
 cd nestjs-microservices
 ```
-### **2. Install dependencies
+### **2. Install dependencies**
 ```bash
 $ yarn install
 ```
 
-### **3. Config .env for each service
+### **3. Config .env for each service**
 - Create a .env file for each service by copying the content from the .env.example file and modifying the values of environment variables as needed.
 
-### **4. Start applications
+### **4. Start applications**
 ```bash
 # Start all services
 yarn run start:dev reservations
